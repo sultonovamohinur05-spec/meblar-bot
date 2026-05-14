@@ -4,10 +4,15 @@ from google import genai
 import json
 import re
 import time
+import os
+from dotenv import load_dotenv
 
-TOKEN = "8816747297:AAE948LawXpK4WfyAoyIuWVmeh53ZpiiV0E"
-ADMIN_ID = "7036471632"
-GEMINI_API_KEY = "AIzaSyAcUAm8OqrxUV-s4EF8hdr2wIOB0htjvnA"
+# .env faylini yuklash
+load_dotenv()
+
+TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+ADMIN_ID = os.getenv("ADMIN_ID")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 bot = telebot.TeleBot(TOKEN)
 
